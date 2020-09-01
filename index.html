@@ -18,7 +18,7 @@
         nav {
           float: left;
           width: 20%;
-          height: 150px;
+          height: 100px;
           background: #eeeeee;
           padding: 20px;
         }
@@ -43,24 +43,10 @@
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;">
       <p class="seltext">Filtro_1:</p>
-      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()" display="inline">
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot1()" display="inline">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
-        
-            <option value="Bogota">Bogota</option>
-        
-            <option value="Medellin">Medellin</option>
-        
-            <option value="Cali">Cali</option>
-        
-            <option value="Barranquilla">Barranquilla</option>
-        
-            <option value="Todas las Ciudades">Todas las Ciudades</option>
-        
-            <option value="N.A">N.A</option>
-        
-            <option value="Otra">Otra</option>
         
 
         <!--- Fin de la modificacion --->
@@ -72,6 +58,12 @@
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
+        
+            <option value="Barras">Barras</option>
+        
+            <option value="Dispersion">Dispersion</option>
+        
+            <option value="Comparacion">Comparacion</option>
         
 
         <!--- Fin de la modificacion --->
@@ -89,34 +81,6 @@
 
 
       
-        
-          <div class="myImage" id="Bogota" style="display:block"> <img src="Graficas/Bogota.png" alt="Bogota"> </div>
-        
-      
-        
-          <div class="myImage" id="Medellin" style="display:none"> <img src="Graficas/Medellin.png" alt="Medellin"> </div>
-        
-      
-        
-          <div class="myImage" id="Cali" style="display:none"> <img src="Graficas/Cali.png" alt="Cali"> </div>
-        
-      
-        
-          <div class="myImage" id="Barranquilla" style="display:none"> <img src="Graficas/Barranquilla.png" alt="Barranquilla"> </div>
-        
-      
-        
-          <div class="myImage" id="Todas las Ciudades" style="display:none"> <img src="Graficas/Todas las Ciudades.png" alt="Todas las Ciudades"> </div>
-        
-      
-        
-          <div class="myImage" id="N.A" style="display:none"> <img src="Graficas/N.A.png" alt="N.A"> </div>
-        
-      
-        
-          <div class="myImage" id="Otra" style="display:none"> <img src="Graficas/Otra.png" alt="Otra"> </div>
-        
-      
 
       <!--- Fin de la modificacion --->
 
@@ -125,9 +89,11 @@
     <script>
       function selectPlot() {
         var filtro_1 = document.getElementById("filtro_1").value;
+        var filtro_2 = document.getElementById("filtro_2").value;
+        var carac = "_"
         var images = document.getElementsByClassName("myImage");
         for (var i = 0; i < images.length; i++) {
-          if (images[i].id == filtro_1) {
+          if (images[i].id == filtro_1.concat(carac, filtro_2)) {
             images[i].style.display = "block"
           }else{
             images[i].style.display = "none"

@@ -18,7 +18,7 @@
         nav {
           float: left;
           width: 20%;
-          height: 150px;
+          height: 100px;
           background: #eeeeee;
           padding: 20px;
         }
@@ -43,7 +43,7 @@
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;">
       <p class="seltext">Filtro_1:</p>
-      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()" display="inline">
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot1()" display="inline">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
@@ -79,11 +79,13 @@
 
 
       {% for i in filtro1 %}
-        {% if i == filtro1[0] %}
-          <div class="myImage" id="{{ i }}" style="display:block"> <img src="Graficas/{{ i }}.png" alt="{{ i }}"> </div>
-        {% else %}
-          <div class="myImage" id="{{ i }}" style="display:none"> <img src="Graficas/{{ i }}.png" alt="{{ i }}"> </div>
-        {% endif %}
+        {% for j in filtro2 %}
+          {% if i == filtro1[0] %}
+            <div class="myImage" id="{{ i }}_{{ j }}" style="display:block"> <img src="Graficas/{{ i }}_{{ j }}.png" alt="{{ i }}_{{ j }}"> </div>
+          {% else %}
+            <div class="myImage" id="{{ i }}_{{ j }}" style="display:none"> <img src="Graficas/{{ i }}_{{ j }}.png" alt="{{ i }}_{{ j }}"> </div>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
 
       <!--- Fin de la modificacion --->
@@ -93,9 +95,11 @@
     <script>
       function selectPlot() {
         var filtro_1 = document.getElementById("filtro_1").value;
+        var filtro_2 = document.getElementById("filtro_2").value;
+        var carac = "_"
         var images = document.getElementsByClassName("myImage");
         for (var i = 0; i < images.length; i++) {
-          if (images[i].id == filtro_1) {
+          if (images[i].id == filtro_1.concat(carac, filtro_2)) {
             images[i].style.display = "block"
           }else{
             images[i].style.display = "none"
