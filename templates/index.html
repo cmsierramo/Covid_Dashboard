@@ -43,24 +43,11 @@
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;">
       <p class="seltext">Filtro_1:</p>
-      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()" display="inline">
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
         {% for i in filtro1 %}
-            <option value="{{ i }}">{{ i }}</option>
-        {% endfor %}
-
-        <!--- Fin de la modificacion --->
-
-      </select>
-
-      <p class="seltext">Filtro_2:</p>
-      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()" display="inline">
-
-        <!--- Genera las opciones del menu usando Jinja2 --->
-
-        {% for i in filtro2 %}
             <option value="{{ i }}">{{ i }}</option>
         {% endfor %}
 
@@ -73,10 +60,32 @@
       <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
     </nav>
 
+     <nav style="border:1px solid #BEBDBD; border-width:2px;">
+      <p class="seltext">Filtro_2:</p>
+      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()">
+
+            <option value="Barras">Barras</option>
+        
+            <option value="Dispersion">Dispersion</option>
+        
+            <option value="Comparacion">Comparacion</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+    </nav>
+
     <div>
 
       <!--- Genera la division de cada imagen usando Jinja2 --->
 
+      <div class="myImage" id="Bogota_Barras" style="display:block"> <img src="Graficas/Bogota_Barras.png" alt="Bogota_Barras"> </div>
+
+      <div class="myImage" id="Medellin_Barras" style="display:block"> <img src="Graficas/Medellin_Barras.png" alt="Medellin_Barras"> </div>
+
+      <div class="myImage" id="Cali_Barras" style="display:block"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
 
       {% for i in filtro1 %}
         {% for j in filtro2 %}
