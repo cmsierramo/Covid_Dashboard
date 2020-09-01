@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Telephones</title>
+    <title>COVID - DASHBOARD</title>
 
     <style>
 
@@ -38,92 +38,83 @@
   <body>
 
     <header>
-      <h2>Telephones by region</h2>
+      <h2>Seleccione la opcion deseada</h2>
     </header>
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;">
-      <p class="seltext">Region:</p>
-      <select id="region" name="region"  onchange="selectPlot()">
-
-        <!--- Este codigo se elimina
-        <option value="N.Amer">N.Amer</option>
-        <option value="Europe">Europe</option>
-        <option value="Asia">Asia</option>
-        <option value="S.Amer">S.Amer</option>
-        <option value="Oceania">Oceania</option>
-        <option value="Africa">Africa</option>
-        <option value="Mid.Amer">Mid.Amer</option>
-        --->
+      <p class="seltext">Filtro_1:</p>
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
         
-            <option value="N.Amer">N.Amer</option>
+            <option value="Bogota">Bogota</option>
         
-            <option value="Europe">Europe</option>
+            <option value="Medellin">Medellin</option>
         
-            <option value="Asia">Asia</option>
+            <option value="Cali">Cali</option>
         
-            <option value="S.Amer">S.Amer</option>
+            <option value="Barranquilla">Barranquilla</option>
         
-            <option value="Oceania">Oceania</option>
+            <option value="Todas las Ciudades">Todas las Ciudades</option>
         
-            <option value="Africa">Africa</option>
+            <option value="N.A">N.A</option>
         
-            <option value="Mid.Amer">Mid.Amer</option>
+            <option value="Otra">Otra</option>
         
 
         <!--- Fin de la modificacion --->
 
       </select>
+
+      <p class="seltext">Filtro_2:</p>
+      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()">
+
+        <!--- Genera las opciones del menu usando Jinja2 --->
+
+        
+
+        <!--- Fin de la modificacion --->
+
+      </select>
+
       <br>
       <hr>
-      <p class="auxtext"> Data from AT&T (1961) The World's Telephones. </p>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
     </nav>
 
     <div>
-
-      <!--- Este codigo se elimina
-      <div class="myImage" id="N.Amer"   style="display:block"> <img src="figs/N.Amer.png"   alt="N.Amer">   </div>
-      <div class="myImage" id="Europe"   style="display:none">  <img src="figs/Europe.png"   alt="Europe">   </div>
-      <div class="myImage" id="Asia"     style="display:none">  <img src="figs/Asia.png"     alt="Asia">     </div>
-      <div class="myImage" id="S.Amer"   style="display:none">  <img src="figs/S.Amer.png"   alt="S.Amer">   </div>
-      <div class="myImage" id="Oceania"  style="display:none">  <img src="figs/Oceania.png"  alt="Oceania">  </div>
-      <div class="myImage" id="Africa"   style="display:none">  <img src="figs/Africa.png"   alt="Africa">   </div>
-      <div class="myImage" id="Mid.Amer" style="display:none">  <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
-      --->
-
 
       <!--- Genera la division de cada imagen usando Jinja2 --->
 
 
       
         
-          <div class="myImage" id="N.Amer" style="display:block"> <img src="Graficas/N.Amer.png" alt="N.Amer"> </div>
+          <div class="myImage" id="Bogota" style="display:block"> <img src="Graficas/Bogota.png" alt="Bogota"> </div>
         
       
         
-          <div class="myImage" id="Europe" style="display:none"> <img src="Graficas/Europe.png" alt="Europe"> </div>
+          <div class="myImage" id="Medellin" style="display:none"> <img src="Graficas/Medellin.png" alt="Medellin"> </div>
         
       
         
-          <div class="myImage" id="Asia" style="display:none"> <img src="Graficas/Asia.png" alt="Asia"> </div>
+          <div class="myImage" id="Cali" style="display:none"> <img src="Graficas/Cali.png" alt="Cali"> </div>
         
       
         
-          <div class="myImage" id="S.Amer" style="display:none"> <img src="Graficas/S.Amer.png" alt="S.Amer"> </div>
+          <div class="myImage" id="Barranquilla" style="display:none"> <img src="Graficas/Barranquilla.png" alt="Barranquilla"> </div>
         
       
         
-          <div class="myImage" id="Oceania" style="display:none"> <img src="Graficas/Oceania.png" alt="Oceania"> </div>
+          <div class="myImage" id="Todas las Ciudades" style="display:none"> <img src="Graficas/Todas las Ciudades.png" alt="Todas las Ciudades"> </div>
         
       
         
-          <div class="myImage" id="Africa" style="display:none"> <img src="Graficas/Africa.png" alt="Africa"> </div>
+          <div class="myImage" id="N.A" style="display:none"> <img src="Graficas/N.A.png" alt="N.A"> </div>
         
       
         
-          <div class="myImage" id="Mid.Amer" style="display:none"> <img src="Graficas/Mid.Amer.png" alt="Mid.Amer"> </div>
+          <div class="myImage" id="Otra" style="display:none"> <img src="Graficas/Otra.png" alt="Otra"> </div>
         
       
 
@@ -133,10 +124,10 @@
 
     <script>
       function selectPlot() {
-        var region = document.getElementById("region").value;
+        var filtro_1 = document.getElementById("region").value;
         var images = document.getElementsByClassName("myImage");
         for (var i = 0; i < images.length; i++) {
-          if (images[i].id == region) {
+          if (images[i].id == filtro_1) {
             images[i].style.display = "block"
           }else{
             images[i].style.display = "none"
