@@ -43,7 +43,7 @@
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;">
       <p class="seltext">Filtro_1:</p>
-      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()" display="inline">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
@@ -56,7 +56,7 @@
       </select>
 
       <p class="seltext">Filtro_2:</p>
-      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()">
+      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()" display="inline">
 
         <!--- Genera las opciones del menu usando Jinja2 --->
 
@@ -92,7 +92,7 @@
 
     <script>
       function selectPlot() {
-        var filtro_1 = document.getElementById("region").value;
+        var filtro_1 = document.getElementById("filtro_1").value;
         var images = document.getElementsByClassName("myImage");
         for (var i = 0; i < images.length; i++) {
           if (images[i].id == filtro_1) {
