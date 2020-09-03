@@ -213,13 +213,17 @@
 
     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Filtro 5</p>
-      <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate()">
+      <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate2()">
 
             <option value="1">1</option>
         
             <option value="2">2</option>
         
             <option value="3">3</option>
+
+            <option value="nf_1">nf_1</option>
+        
+            <option value="nf_2">nf_2</option>
 
       </select>
       
@@ -249,7 +253,27 @@
     <br>
     <hr>
 
+    <div>
+        <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="100%" height="500px" style="display:none;"></iframe>
+        <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="100%" height="500px" style="display:none;"></iframe>
+    </div>
+
     <script>
+      function selectPlotCompare2() {
+        var filtro_5 = document.getElementById("filtro_5").value;
+        var frame = document.getElementsByClassName("frame_Comp");
+        for (var i = 0; i < images.length; i++) {
+
+          if (frame[i].name == filtro_5) {
+            frame[i].style.display = "block"
+          }else{
+            frame[i].style.display = "none"
+          }
+
+        }
+      }
+
+
       function selectPlot() {
         var filtro_1 = document.getElementById("filtro_1").value;
         var filtro_2 = document.getElementById("filtro_2").value;
