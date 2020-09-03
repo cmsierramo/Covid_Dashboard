@@ -7,8 +7,9 @@
     <style>
 
         body {
-          font-family: Arial, Helvetica, sans-serif;
+          font-family: Comic Sans MS,Arial,Verdana;
           padding-left: 10px;
+          background: #D5D8DC;
         }
 
         header {
@@ -17,27 +18,61 @@
 
         nav {
           float: left;
-          width: 45%;
+          width: 48%;
           height: 100px;
-          background: #eeeeee;
-          padding: 20px;
+          background: #2C3E50;
+          padding: 10px;
         }
 
         .comparaciones {
           float: left;
           width: 30%;
           height: 100px;
-          background: #eeeeee;
-          padding: 20px;
+          background: #2C3E50;
+          padding: 10px;
         }
 
         .seltext {
             font-weight: bold;
+            color: White;
+            font-style: italic;
         }
 
         .auxtext {
             font-size: 14px;
             color: #807F7F;
+        }
+
+        .select {
+          position: relative;
+          border: 1px solid #ccc;
+          width: 120px;
+          overflow: hidden;
+          background-color: #fff;
+        }
+          
+        .select:before {
+            content: '';
+            position: absolute;
+            right: 5px;
+            top: 7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 7px 5px 0 5px;
+            border-color: #000000 transparent transparent transparent;
+            z-index: 5;
+            pointer-events: none;
+        }
+          
+        .select select {
+            padding: 5px 8px;
+            width: 130%;
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+            background-image: none;
+            appearance: none;
         }
 
     </style>
@@ -50,9 +85,9 @@
       <h2>DASHBOARD - COVID</h2>
     </header>
     
-      <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <nav style="border:1px solid #BEBDBD; border-width:1px;" align="center">
         <p class="seltext">Localizacion</p>
-        <select id="filtro_8" name="filtro_8"  onchange="selectPlotComparate2()">
+        <select class="select" id="filtro_8" name="filtro_8"  onchange="selectPlotComparate2()">
 
             <option value="Colombia">Colombia</option>
             <option value="Bogota">Bogota</option>        
@@ -165,14 +200,85 @@
       <div class="myImage1" id="Colombia_Reportados_Mediano" style="display:none"> <img src="Graficas/Colombia_Reportados_Mediano.png" alt="Colombia_Reportados_Mediano"> </div>
       <div class="myImage1" id="Colombia_Recuperados_Corto" style="display:none"> <img src="Graficas/Colombia_Recuperados_Corto.png" alt="Colombia_Recuperados_Corto"> </div>
       <div class="myImage1" id="Colombia_Recuperados_Mediano" style="display:none"> <img src="Graficas/Colombia_Recuperados_Mediano.png" alt="Colombia_Recuperados_Mediano"> </div>
-
+      <div class="myImage1" id="Colombia_Fallecidos_Corto" style="display:none"> <img src="Graficas/Colombia_Fallecidos_Corto.png" alt="Colombia_Fallecidos_Corto"> </div>
+      <div class="myImage1" id="Colombia_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Colombia_Fallecidos_Mediano.png" alt="Colombia_Fallecidos_Mediano"> </div>
+      <div class="myImage1" id="Bogota_Activos_Corto" style="display:none"> <img src="Graficas/Bogota_Activos_Corto.png" alt="Bogota_Activos_Corto"> </div>
+      <div class="myImage1" id="Bogota_Activos_Mediano" style="display:none"> <img src="Graficas/Bogota_Activos_Mediano.png" alt="Bogota_Activos_Mediano"> </div>
+      <div class="myImage1" id="Bogota_Reportados_Corto" style="display:none"> <img src="Graficas/Bogota_Reportados_Corto.png" alt="Bogota_Reportados_Corto"> </div>
+      <div class="myImage1" id="Bogota_Reportados_Mediano" style="display:none"> <img src="Graficas/Bogota_Reportados_Mediano.png" alt="Bogota_Reportados_Mediano"> </div>
+      <div class="myImage1" id="Bogota_Recuperados_Corto" style="display:none"> <img src="Graficas/Bogota_Recuperados_Corto.png" alt="Bogota_Recuperados_Corto"> </div>
+      <div class="myImage1" id="Bogota_Recuperados_Mediano" style="display:none"> <img src="Graficas/Bogota_Recuperados_Mediano.png" alt="Bogota_Recuperados_Mediano"> </div>
+      <div class="myImage1" id="Bogota_Fallecidos_Corto" style="display:none"> <img src="Graficas/Bogota_Fallecidos_Corto.png" alt="Bogota_Fallecidos_Corto"> </div>
+      <div class="myImage1" id="Bogota_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Bogota_Fallecidos_Mediano.png" alt="Bogota_Fallecidos_Mediano"> </div>
+      <div class="myImage1" id="Medellin_Activos_Corto" style="display:none"> <img src="Graficas/Medellin_Activos_Corto.png" alt="Medellin_Activos_Corto"> </div>
+      <div class="myImage1" id="Medellin_Activos_Mediano" style="display:none"> <img src="Graficas/Medellin_Activos_Mediano.png" alt="Medellin_Activos_Mediano"> </div>
+      <div class="myImage1" id="Medellin_Reportados_Corto" style="display:none"> <img src="Graficas/Medellin_Reportados_Corto.png" alt="Medellin_Reportados_Corto"> </div>
+      <div class="myImage1" id="Medellin_Reportados_Mediano" style="display:none"> <img src="Graficas/Medellin_Reportados_Mediano.png" alt="Medellin_Reportados_Mediano"> </div>
+      <div class="myImage1" id="Medellin_Recuperados_Corto" style="display:none"> <img src="Graficas/Medellin_Recuperados_Corto.png" alt="Medellin_Recuperados_Corto"> </div>
+      <div class="myImage1" id="Medellin_Recuperados_Mediano" style="display:none"> <img src="Graficas/Medellin_Recuperados_Mediano.png" alt="Medellin_Recuperados_Mediano"> </div>
+      <div class="myImage1" id="Medellin_Fallecidos_Corto" style="display:none"> <img src="Graficas/Medellin_Fallecidos_Corto.png" alt="Medellin_Fallecidos_Corto"> </div>
+      <div class="myImage1" id="Medellin_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Medellin_Fallecidos_Mediano.png" alt="Medellin_Fallecidos_Mediano"> </div>
+      <div class="myImage1" id="Cali_Activos_Corto" style="display:none"> <img src="Graficas/Cali_Activos_Corto.png" alt="Cali_Activos_Corto"> </div>
+      <div class="myImage1" id="Cali_Activos_Mediano" style="display:none"> <img src="Graficas/Cali_Activos_Mediano.png" alt="Cali_Activos_Mediano"> </div>
+      <div class="myImage1" id="Cali_Reportados_Corto" style="display:none"> <img src="Graficas/Cali_Reportados_Corto.png" alt="Cali_Reportados_Corto"> </div>
+      <div class="myImage1" id="Cali_Reportados_Mediano" style="display:none"> <img src="Graficas/Cali_Reportados_Mediano.png" alt="Cali_Reportados_Mediano"> </div>
+      <div class="myImage1" id="Cali_Recuperados_Corto" style="display:none"> <img src="Graficas/Cali_Recuperados_Corto.png" alt="Cali_Recuperados_Corto"> </div>
+      <div class="myImage1" id="Cali_Recuperados_Mediano" style="display:none"> <img src="Graficas/Cali_Recuperados_Mediano.png" alt="Cali_Recuperados_Mediano"> </div>
+      <div class="myImage1" id="Cali_Fallecidos_Corto" style="display:none"> <img src="Graficas/Cali_Fallecidos_Corto.png" alt="Cali_Fallecidos_Corto"> </div>
+      <div class="myImage1" id="Cali_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Cali_Fallecidos_Mediano.png" alt="Cali_Fallecidos_Mediano"> </div>
+      <div class="myImage1" id="Barranquilla_Activos_Corto" style="display:none"> <img src="Graficas/Barranquilla_Activos_Corto.png" alt="Barranquilla_Activos_Corto"> </div>
+      <div class="myImage1" id="Barranquilla_Activos_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Activos_Mediano.png" alt="Barranquilla_Activos_Mediano"> </div>
+      <div class="myImage1" id="Barranquilla_Reportados_Corto" style="display:none"> <img src="Graficas/Barranquilla_Reportados_Corto.png" alt="Barranquilla_Reportados_Corto"> </div>
+      <div class="myImage1" id="Barranquilla_Reportados_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Reportados_Mediano.png" alt="Barranquilla_Reportados_Mediano"> </div>
+      <div class="myImage1" id="Barranquilla_Recuperados_Corto" style="display:none"> <img src="Graficas/Barranquilla_Recuperados_Corto.png" alt="Barranquilla_Recuperados_Corto"> </div>
+      <div class="myImage1" id="Barranquilla_Recuperados_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Recuperados_Mediano.png" alt="Barranquilla_Recuperados_Mediano"> </div>
+      <div class="myImage1" id="Barranquilla_Fallecidos_Corto" style="display:none"> <img src="Graficas/Barranquilla_Fallecidos_Corto.png" alt="Barranquilla_Fallecidos_Corto"> </div>
+      <div class="myImage1" id="Barranquilla_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Fallecidos_Mediano.png" alt="Barranquilla_Fallecidos_Mediano"> </div>
+    
     </div>
 
     <p>
 
-        <p class="mylabel1" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
-
-        <p class="mylabel1" id="Medellin_Barras_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
+        <p class="mylabel1" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Activos_Corto_t</p>
+        <p class="mylabel1" id="Colombia_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Activos_Mediano_t</p>
+        <p class="mylabel1" id="Colombia_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Reportados_Corto_t</p>
+        <p class="mylabel1" id="Colombia_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Reportados_Mediano_t</p>
+        <p class="mylabel1" id="Colombia_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Recuperados_Corto_t</p>
+        <p class="mylabel1" id="Colombia_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Recuperados_Mediano_t</p>
+        <p class="mylabel1" id="Colombia_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Fallecidos_Corto_t</p>
+        <p class="mylabel1" id="Colombia_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Fallecidos_Mediano_t</p>
+        <p class="mylabel1" id="Bogota_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Activos_Corto_t</p>
+        <p class="mylabel1" id="Bogota_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Activos_Mediano_t</p>
+        <p class="mylabel1" id="Bogota_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Reportados_Corto_t</p>
+        <p class="mylabel1" id="Bogota_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Reportados_Mediano_t</p>
+        <p class="mylabel1" id="Bogota_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Recuperados_Corto_t</p>
+        <p class="mylabel1" id="Bogota_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Recuperados_Mediano_t</p>
+        <p class="mylabel1" id="Bogota_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Fallecidos_Corto_t</p>
+        <p class="mylabel1" id="Bogota_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Fallecidos_Mediano_t</p>
+        <p class="mylabel1" id="Medellin_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Activos_Corto_t</p>
+        <p class="mylabel1" id="Medellin_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Activos_Mediano_t</p>
+        <p class="mylabel1" id="Medellin_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Reportados_Corto_t</p>
+        <p class="mylabel1" id="Medellin_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Reportados_Mediano_t</p>
+        <p class="mylabel1" id="Medellin_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Recuperados_Corto_t</p>
+        <p class="mylabel1" id="Medellin_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Recuperados_Mediano_t</p>
+        <p class="mylabel1" id="Medellin_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Fallecidos_Corto_t</p>
+        <p class="mylabel1" id="Medellin_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Fallecidos_Mediano_t</p>
+        <p class="mylabel1" id="Cali_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Activos_Corto_t</p>
+        <p class="mylabel1" id="Cali_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Activos_Mediano_t</p>
+        <p class="mylabel1" id="Cali_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Reportados_Corto_t</p>
+        <p class="mylabel1" id="Cali_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Reportados_Mediano_t</p>
+        <p class="mylabel1" id="Cali_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Recuperados_Corto_t</p>
+        <p class="mylabel1" id="Cali_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Recuperados_Mediano_t</p>
+        <p class="mylabel1" id="Cali_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Fallecidos_Corto_t</p>
+        <p class="mylabel1" id="Cali_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Fallecidos_Mediano_t</p>    
+        <p class="mylabel1" id="Barranquilla_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Activos_Corto_t</p>
+        <p class="mylabel1" id="Barranquilla_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Activos_Mediano_t</p>
+        <p class="mylabel1" id="Barranquilla_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Reportados_Corto_t</p>
+        <p class="mylabel1" id="Barranquilla_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Reportados_Mediano_t</p>
+        <p class="mylabel1" id="Barranquilla_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Recuperados_Corto_t</p>
+        <p class="mylabel1" id="Barranquilla_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Recuperados_Mediano_t</p>
+        <p class="mylabel1" id="Barranquilla_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Fallecidos_Corto_t</p>
+        <p class="mylabel1" id="Barranquilla_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Fallecidos_Mediano_t</p>
 
     </p>
 
@@ -183,43 +289,31 @@
     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Localizacion</p>
       <select id="filtro_4" name="filtro_4"  onchange="selectPlotComparate3()">
-
         
             <option value="Colombia">Colombia</option>
-
-            <option value="Bogota">Bogota</option>
-        
-            <option value="Medellin">Medellin</option>
-        
-            <option value="Cali">Cali</option>
-        
-            <option value="Barranquilla">Barranquilla</option>           
-        
+            <option value="Bogota">Bogota</option>        
+            <option value="Medellin">Medellin</option>        
+            <option value="Cali">Cali</option>        
+            <option value="Barranquilla">Barranquilla</option>        
             <option value="N.A">N.A</option>
 
       </select>
-
       <br>
       <hr>
-      <p class="auxtext" align="center"> Seleccione la ciudad </p>
+      <p class="auxtext" align="center">  </p>
     </nav>
 
      <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Tipo de caso</p>
       <select id="filtro_6" name="filtro_6"  onchange="selectPlotComparate3()">
 
-            <option value="Activos">Activos</option>
-        
-            <option value="Reportados">Reportados</option>
-        
+            <option value="Activos">Activos</option>        
+            <option value="Reportados">Reportados</option>        
             <option value="Recuperados">Recuperados</option>
-
-            <option value="Fallecidos">Fallecidos</option>
-        
+            <option value="Fallecidos">Fallecidos</option>        
             <option value="Otro">Otro</option>
 
-      </select>
-      
+      </select>      
       <br>
       <hr>
       <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
@@ -229,35 +323,104 @@
       <p class="seltext">Plazo</p>
       <select id="filtro_7" name="filtro_7"  onchange="selectPlotComparate3()">
 
-            <option value="Corto">Corto</option>
-        
+            <option value="Corto">Corto</option>        
             <option value="Mediano">Mediano</option>
 
-      </select>
-      
+      </select>      
       <br>
       <hr>
-      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+      <p class="auxtext">  </p>
     </nav>
     
 
     <div align="center">
 
       <div class="myImage2" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco"> </div>
-
       <div class="myImage2" id="Colombia_Activos_Corto" style="display:none"> <img src="Graficas/Colombia_Activos_Corto.png" alt="Colombia_Activos_Corto"> </div>
-
-      <div class="myImage2" id="Medellin_Barras_Mediano" style="display:none"> <img src="Graficas/Medellin_Barras_Mediano.png" alt="Medellin_Barras_Mediano"> </div>
-
-      <div class="myImage2" id="Cali_Barras" style="display:none"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
+      <div class="myImage2" id="Colombia_Activos_Mediano" style="display:none"> <img src="Graficas/Colombia_Activos_Mediano.png" alt="Colombia_Activos_Mediano"> </div>
+      <div class="myImage2" id="Colombia_Reportados_Corto" style="display:none"> <img src="Graficas/Colombia_Reportados_Corto.png" alt="Colombia_Reportados_Corto"> </div>
+      <div class="myImage2" id="Colombia_Reportados_Mediano" style="display:none"> <img src="Graficas/Colombia_Reportados_Mediano.png" alt="Colombia_Reportados_Mediano"> </div>
+      <div class="myImage2" id="Colombia_Recuperados_Corto" style="display:none"> <img src="Graficas/Colombia_Recuperados_Corto.png" alt="Colombia_Recuperados_Corto"> </div>
+      <div class="myImage2" id="Colombia_Recuperados_Mediano" style="display:none"> <img src="Graficas/Colombia_Recuperados_Mediano.png" alt="Colombia_Recuperados_Mediano"> </div>
+      <div class="myImage2" id="Colombia_Fallecidos_Corto" style="display:none"> <img src="Graficas/Colombia_Fallecidos_Corto.png" alt="Colombia_Fallecidos_Corto"> </div>
+      <div class="myImage2" id="Colombia_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Colombia_Fallecidos_Mediano.png" alt="Colombia_Fallecidos_Mediano"> </div>
+      <div class="myImage2" id="Bogota_Activos_Corto" style="display:none"> <img src="Graficas/Bogota_Activos_Corto.png" alt="Bogota_Activos_Corto"> </div>
+      <div class="myImage2" id="Bogota_Activos_Mediano" style="display:none"> <img src="Graficas/Bogota_Activos_Mediano.png" alt="Bogota_Activos_Mediano"> </div>
+      <div class="myImage2" id="Bogota_Reportados_Corto" style="display:none"> <img src="Graficas/Bogota_Reportados_Corto.png" alt="Bogota_Reportados_Corto"> </div>
+      <div class="myImage2" id="Bogota_Reportados_Mediano" style="display:none"> <img src="Graficas/Bogota_Reportados_Mediano.png" alt="Bogota_Reportados_Mediano"> </div>
+      <div class="myImage2" id="Bogota_Recuperados_Corto" style="display:none"> <img src="Graficas/Bogota_Recuperados_Corto.png" alt="Bogota_Recuperados_Corto"> </div>
+      <div class="myImage2" id="Bogota_Recuperados_Mediano" style="display:none"> <img src="Graficas/Bogota_Recuperados_Mediano.png" alt="Bogota_Recuperados_Mediano"> </div>
+      <div class="myImage2" id="Bogota_Fallecidos_Corto" style="display:none"> <img src="Graficas/Bogota_Fallecidos_Corto.png" alt="Bogota_Fallecidos_Corto"> </div>
+      <div class="myImage2" id="Bogota_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Bogota_Fallecidos_Mediano.png" alt="Bogota_Fallecidos_Mediano"> </div>
+      <div class="myImage2" id="Medellin_Activos_Corto" style="display:none"> <img src="Graficas/Medellin_Activos_Corto.png" alt="Medellin_Activos_Corto"> </div>
+      <div class="myImage2" id="Medellin_Activos_Mediano" style="display:none"> <img src="Graficas/Medellin_Activos_Mediano.png" alt="Medellin_Activos_Mediano"> </div>
+      <div class="myImage2" id="Medellin_Reportados_Corto" style="display:none"> <img src="Graficas/Medellin_Reportados_Corto.png" alt="Medellin_Reportados_Corto"> </div>
+      <div class="myImage2" id="Medellin_Reportados_Mediano" style="display:none"> <img src="Graficas/Medellin_Reportados_Mediano.png" alt="Medellin_Reportados_Mediano"> </div>
+      <div class="myImage2" id="Medellin_Recuperados_Corto" style="display:none"> <img src="Graficas/Medellin_Recuperados_Corto.png" alt="Medellin_Recuperados_Corto"> </div>
+      <div class="myImage2" id="Medellin_Recuperados_Mediano" style="display:none"> <img src="Graficas/Medellin_Recuperados_Mediano.png" alt="Medellin_Recuperados_Mediano"> </div>
+      <div class="myImage2" id="Medellin_Fallecidos_Corto" style="display:none"> <img src="Graficas/Medellin_Fallecidos_Corto.png" alt="Medellin_Fallecidos_Corto"> </div>
+      <div class="myImage2" id="Medellin_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Medellin_Fallecidos_Mediano.png" alt="Medellin_Fallecidos_Mediano"> </div>
+      <div class="myImage2" id="Cali_Activos_Corto" style="display:none"> <img src="Graficas/Cali_Activos_Corto.png" alt="Cali_Activos_Corto"> </div>
+      <div class="myImage2" id="Cali_Activos_Mediano" style="display:none"> <img src="Graficas/Cali_Activos_Mediano.png" alt="Cali_Activos_Mediano"> </div>
+      <div class="myImage2" id="Cali_Reportados_Corto" style="display:none"> <img src="Graficas/Cali_Reportados_Corto.png" alt="Cali_Reportados_Corto"> </div>
+      <div class="myImage2" id="Cali_Reportados_Mediano" style="display:none"> <img src="Graficas/Cali_Reportados_Mediano.png" alt="Cali_Reportados_Mediano"> </div>
+      <div class="myImage2" id="Cali_Recuperados_Corto" style="display:none"> <img src="Graficas/Cali_Recuperados_Corto.png" alt="Cali_Recuperados_Corto"> </div>
+      <div class="myImage2" id="Cali_Recuperados_Mediano" style="display:none"> <img src="Graficas/Cali_Recuperados_Mediano.png" alt="Cali_Recuperados_Mediano"> </div>
+      <div class="myImage2" id="Cali_Fallecidos_Corto" style="display:none"> <img src="Graficas/Cali_Fallecidos_Corto.png" alt="Cali_Fallecidos_Corto"> </div>
+      <div class="myImage2" id="Cali_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Cali_Fallecidos_Mediano.png" alt="Cali_Fallecidos_Mediano"> </div>
+      <div class="myImage2" id="Barranquilla_Activos_Corto" style="display:none"> <img src="Graficas/Barranquilla_Activos_Corto.png" alt="Barranquilla_Activos_Corto"> </div>
+      <div class="myImage2" id="Barranquilla_Activos_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Activos_Mediano.png" alt="Barranquilla_Activos_Mediano"> </div>
+      <div class="myImage2" id="Barranquilla_Reportados_Corto" style="display:none"> <img src="Graficas/Barranquilla_Reportados_Corto.png" alt="Barranquilla_Reportados_Corto"> </div>
+      <div class="myImage2" id="Barranquilla_Reportados_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Reportados_Mediano.png" alt="Barranquilla_Reportados_Mediano"> </div>
+      <div class="myImage2" id="Barranquilla_Recuperados_Corto" style="display:none"> <img src="Graficas/Barranquilla_Recuperados_Corto.png" alt="Barranquilla_Recuperados_Corto"> </div>
+      <div class="myImage2" id="Barranquilla_Recuperados_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Recuperados_Mediano.png" alt="Barranquilla_Recuperados_Mediano"> </div>
+      <div class="myImage2" id="Barranquilla_Fallecidos_Corto" style="display:none"> <img src="Graficas/Barranquilla_Fallecidos_Corto.png" alt="Barranquilla_Fallecidos_Corto"> </div>
+      <div class="myImage2" id="Barranquilla_Fallecidos_Mediano" style="display:none"> <img src="Graficas/Barranquilla_Fallecidos_Mediano.png" alt="Barranquilla_Fallecidos_Mediano"> </div>
 
     </div>
 
     <p>
 
-        <p class="mylabel2" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
-
-        <p class="mylabel2" id="Medellin_Barras_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
+        <p class="mylabel2" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Activos_Corto_t</p>
+        <p class="mylabel2" id="Colombia_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Activos_Mediano_t</p>
+        <p class="mylabel2" id="Colombia_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Reportados_Corto_t</p>
+        <p class="mylabel2" id="Colombia_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Reportados_Mediano_t</p>
+        <p class="mylabel2" id="Colombia_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Recuperados_Corto_t</p>
+        <p class="mylabel2" id="Colombia_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Recuperados_Mediano_t</p>
+        <p class="mylabel2" id="Colombia_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Colombia_Fallecidos_Corto_t</p>
+        <p class="mylabel2" id="Colombia_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Colombia_Fallecidos_Mediano_t</p>
+        <p class="mylabel2" id="Bogota_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Activos_Corto_t</p>
+        <p class="mylabel2" id="Bogota_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Activos_Mediano_t</p>
+        <p class="mylabel2" id="Bogota_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Reportados_Corto_t</p>
+        <p class="mylabel2" id="Bogota_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Reportados_Mediano_t</p>
+        <p class="mylabel2" id="Bogota_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Recuperados_Corto_t</p>
+        <p class="mylabel2" id="Bogota_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Recuperados_Mediano_t</p>
+        <p class="mylabel2" id="Bogota_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Bogota_Fallecidos_Corto_t</p>
+        <p class="mylabel2" id="Bogota_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Bogota_Fallecidos_Mediano_t</p>
+        <p class="mylabel2" id="Medellin_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Activos_Corto_t</p>
+        <p class="mylabel2" id="Medellin_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Activos_Mediano_t</p>
+        <p class="mylabel2" id="Medellin_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Reportados_Corto_t</p>
+        <p class="mylabel2" id="Medellin_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Reportados_Mediano_t</p>
+        <p class="mylabel2" id="Medellin_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Recuperados_Corto_t</p>
+        <p class="mylabel2" id="Medellin_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Recuperados_Mediano_t</p>
+        <p class="mylabel2" id="Medellin_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Medellin_Fallecidos_Corto_t</p>
+        <p class="mylabel2" id="Medellin_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Medellin_Fallecidos_Mediano_t</p>
+        <p class="mylabel2" id="Cali_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Activos_Corto_t</p>
+        <p class="mylabel2" id="Cali_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Activos_Mediano_t</p>
+        <p class="mylabel2" id="Cali_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Reportados_Corto_t</p>
+        <p class="mylabel2" id="Cali_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Reportados_Mediano_t</p>
+        <p class="mylabel2" id="Cali_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Recuperados_Corto_t</p>
+        <p class="mylabel2" id="Cali_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Recuperados_Mediano_t</p>
+        <p class="mylabel2" id="Cali_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Cali_Fallecidos_Corto_t</p>
+        <p class="mylabel2" id="Cali_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Cali_Fallecidos_Mediano_t</p>    
+        <p class="mylabel2" id="Barranquilla_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Activos_Corto_t</p>
+        <p class="mylabel2" id="Barranquilla_Activos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Activos_Mediano_t</p>
+        <p class="mylabel2" id="Barranquilla_Reportados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Reportados_Corto_t</p>
+        <p class="mylabel2" id="Barranquilla_Reportados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Reportados_Mediano_t</p>
+        <p class="mylabel2" id="Barranquilla_Recuperados_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Recuperados_Corto_t</p>
+        <p class="mylabel2" id="Barranquilla_Recuperados_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Recuperados_Mediano_t</p>
+        <p class="mylabel2" id="Barranquilla_Fallecidos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS Barranquilla_Fallecidos_Corto_t</p>
+        <p class="mylabel2" id="Barranquilla_Fallecidos_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS Barranquilla_Fallecidos_Mediano_t</p>
 
     </p>
 
@@ -352,6 +515,6 @@
     LAURA MARIA URIBE DIEZ - MAURICIO VALENCIA ORTEGON - FABIAN MAURICIO VELEZ OSORIO - CARLOS MARIO SIERRA MORENO<br>
     luribed@unal.edu.co - mavalenciaor@unal.edu.co - fvelezo@unal.edu.co - cmsierramo@unal.edu.co
   </address>
-  <p>Última modificación: 31 de Agosto del 2020</p>
+  <p align="center">Analisis y graficas tomadas a la fecha de corte - 31 de Agosto del 2020</p>
 </footer>
 </html>
