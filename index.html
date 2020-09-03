@@ -73,6 +73,7 @@
     </div>
     <br>
     <div width="95%" align="center">
+        <b><div class="myImage1" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco" width="95%"> </div>
         <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
         <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
     </div>
@@ -90,23 +91,21 @@
 
 
     <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
-      <p class="seltext">Ciudad</p>
-      <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
+      <p class="seltext">Localizacion</p>
+      <select id="filtro_1" name="filtro_1"  onchange="selectPlotComparate()">
 
         
+            <option value="Colombia">Colombia</option>
+
             <option value="Bogota">Bogota</option>
         
             <option value="Medellin">Medellin</option>
         
             <option value="Cali">Cali</option>
         
-            <option value="Barranquilla">Barranquilla</option>
-        
-            <option value="Todas las Ciudades">Todas las Ciudades</option>
+            <option value="Barranquilla">Barranquilla</option>           
         
             <option value="N.A">N.A</option>
-        
-            <option value="Otra">Otra</option>
 
       </select>
 
@@ -116,14 +115,33 @@
     </nav>
 
      <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
-      <p class="seltext">Grafica</p>
-      <select id="filtro_2" name="filtro_2"  onchange="selectPlot()">
+      <p class="seltext">Tipo de caso</p>
+      <select id="filtro_2" name="filtro_2"  onchange="selectPlotComparate()">
 
-            <option value="Barras">Barras</option>
+            <option value="Activos">Activos</option>
         
-            <option value="Dispersion">Dispersion</option>
+            <option value="Reportados">Reportados</option>
         
-            <option value="Comparacion">Comparacion</option>
+            <option value="Recuperados">Recuperados</option>
+
+            <option value="Fallecidos">Fallecidos</option>
+        
+            <option value="Otro">Otro</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+    </nav>
+
+    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Plazo</p>
+      <select id="filtro_3" name="filtro_3"  onchange="selectPlotComparate()">
+
+            <option value="Corto">Corto</option>
+        
+            <option value="Mediano">Mediano</option>
 
       </select>
       
@@ -135,19 +153,21 @@
 
     <div align="center">
 
-      <div class="myImage" id="Bogota_Barras" style="display:none"> <img src="Graficas/Bogota_Barras.png" alt="Bogota_Barras"> </div>
+      <div class="myImage1" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco"> </div>
 
-      <div class="myImage" id="Medellin_Barras" style="display:none"> <img src="Graficas/Medellin_Barras.png" alt="Medellin_Barras"> </div>
+      <div class="myImage1" id="Colombia_Activos_Corto" style="display:none"> <img src="Graficas/Colombia_Activos_Corto.png" alt="Colombia_Activos_Corto"> </div>
 
-      <div class="myImage" id="Cali_Barras" style="display:none"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
+      <div class="myImage1" id="Medellin_Barras_Mediano" style="display:none"> <img src="Graficas/Medellin_Barras_Mediano.png" alt="Medellin_Barras_Mediano"> </div>
+
+      <div class="myImage1" id="Cali_Barras" style="display:none"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
 
     </div>
 
     <p>
 
-        <p class="mylabel" id="Bogota_Barras_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
+        <p class="mylabel1" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
 
-        <p class="mylabel" id="Medellin_Barras_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
+        <p class="mylabel1" id="Medellin_Barras_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
 
     </p>
 
@@ -160,6 +180,7 @@
         var filtro_5 = document.getElementById("filtro_5").value;
         var frame = document.getElementsByClassName("frame_Comp");
         var lbl = document.getElementsByClassName("mylabelframe");
+        document.getElementById("FondoBlanco").style.display = "none"
         for (var i = 0; i < frame.length; i++) {
 
           if (frame[i].name == filtro_5) {
@@ -203,13 +224,14 @@
       }
 
       function selectPlotComparate() {
-        var filtro_1 = document.getElementById("filtro_3").value;
-        var filtro_2 = document.getElementById("filtro_4").value;
-        var filtro_3 = document.getElementById("filtro_5").value;
+        var filtro_1 = document.getElementById("filtro_1").value;
+        var filtro_2 = document.getElementById("filtro_2").value;
+        var filtro_3 = document.getElementById("filtro_3").value;
         var carac = "_"
         var carac2 = "_t"
-        var images = document.getElementsByClassName("myImagecomparate");
-        var lbl = document.getElementsByClassName("mylabelcomparate");
+        var images = document.getElementsByClassName("myImage1");
+        var lbl = document.getElementsByClassName("mylabel1");
+        document.getElementById("FondoBlanco").style.display = "none"
         for (var i = 0; i < images.length; i++) {
 
           if (images[i].id == filtro_1.concat(carac, filtro_2, carac, filtro_3)) {
