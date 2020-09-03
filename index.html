@@ -172,6 +172,93 @@
     </p>
 
     <br>
+
+
+
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Localizacion</p>
+      <select id="filtro_4" name="filtro_4"  onchange="selectPlotComparate3()">
+
+        
+            <option value="Colombia">Colombia</option>
+
+            <option value="Bogota">Bogota</option>
+        
+            <option value="Medellin">Medellin</option>
+        
+            <option value="Cali">Cali</option>
+        
+            <option value="Barranquilla">Barranquilla</option>           
+        
+            <option value="N.A">N.A</option>
+
+      </select>
+
+      <br>
+      <hr>
+      <p class="auxtext" align="center"> Seleccione la ciudad </p>
+    </nav>
+
+     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Tipo de caso</p>
+      <select id="filtro_6" name="filtro_6"  onchange="selectPlotComparate3()">
+
+            <option value="Activos">Activos</option>
+        
+            <option value="Reportados">Reportados</option>
+        
+            <option value="Recuperados">Recuperados</option>
+
+            <option value="Fallecidos">Fallecidos</option>
+        
+            <option value="Otro">Otro</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+    </nav>
+
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Plazo</p>
+      <select id="filtro_7" name="filtro_7"  onchange="selectPlotComparate3()">
+
+            <option value="Corto">Corto</option>
+        
+            <option value="Mediano">Mediano</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
+    </nav>
+    
+
+    <div align="center">
+
+      <div class="myImage2" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco"> </div>
+
+      <div class="myImage2" id="Colombia_Activos_Corto" style="display:none"> <img src="Graficas/Colombia_Activos_Corto.png" alt="Colombia_Activos_Corto"> </div>
+
+      <div class="myImage2" id="Medellin_Barras_Mediano" style="display:none"> <img src="Graficas/Medellin_Barras_Mediano.png" alt="Medellin_Barras_Mediano"> </div>
+
+      <div class="myImage2" id="Cali_Barras" style="display:none"> <img src="Graficas/Cali_Barras.png" alt="Cali_Barras"> </div>
+
+    </div>
+
+    <p>
+
+        <p class="mylabel2" id="Colombia_Activos_Corto_t" style="display:none" align="center"> GRAFICA BOGOTA BARRAS </p>
+
+        <p class="mylabel2" id="Medellin_Barras_Mediano_t" style="display:none" align="center">  GRAFICA MEDELLIN BARRAS </p>
+
+    </p>
+
+
+
+    <br>
     <hr>
     <br>
 
@@ -198,31 +285,6 @@
         }
       }
 
-
-      function selectPlot() {
-        var filtro_1 = document.getElementById("filtro_1").value;
-        var filtro_2 = document.getElementById("filtro_2").value;
-        var carac = "_"
-        var carac2 = "_t"
-        var images = document.getElementsByClassName("myImage");
-        var lbl = document.getElementsByClassName("mylabel");
-        for (var i = 0; i < images.length; i++) {
-
-          if (images[i].id == filtro_1.concat(carac, filtro_2)) {
-            images[i].style.display = "block"
-          }else{
-            images[i].style.display = "none"
-          }
-
-          if (lbl[i].id == filtro_1.concat(carac, filtro_2, carac2)) {
-            lbl[i].style.display = "block"
-          }else{
-            lbl[i].style.display = "none"
-          }
-
-        }
-      }
-
       function selectPlotComparate() {
         var filtro_1 = document.getElementById("filtro_1").value;
         var filtro_2 = document.getElementById("filtro_2").value;
@@ -231,6 +293,32 @@
         var carac2 = "_t"
         var images = document.getElementsByClassName("myImage1");
         var lbl = document.getElementsByClassName("mylabel1");
+        document.getElementById("FondoBlanco").style.display = "none"
+        for (var i = 0; i < images.length; i++) {
+
+          if (images[i].id == filtro_1.concat(carac, filtro_2, carac, filtro_3)) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+
+          if (lbl[i].id == filtro_1.concat(carac, filtro_2, carac, filtro_3, carac2)) {
+            lbl[i].style.display = "block"
+          }else{
+            lbl[i].style.display = "none"
+          }
+
+        }
+      }
+
+      function selectPlotComparate3() {
+        var filtro_1 = document.getElementById("filtro_4").value;
+        var filtro_2 = document.getElementById("filtro_6").value;
+        var filtro_3 = document.getElementById("filtro_7").value;
+        var carac = "_"
+        var carac2 = "_t"
+        var images = document.getElementsByClassName("myImage2");
+        var lbl = document.getElementsByClassName("mylabel2");
         document.getElementById("FondoBlanco").style.display = "none"
         for (var i = 0; i < images.length; i++) {
 
