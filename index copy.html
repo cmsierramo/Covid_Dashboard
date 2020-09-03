@@ -75,19 +75,7 @@
         <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
         <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
     </div>
-
-    <p>
-
-        <p class="mylabelframe" id="nf_1" style="display:none" align="center"> FRAME 1 DESCRIPCION</p>
-
-        <p class="mylabelframe" id="nf_2" style="display:none" align="center">  FRAME 2 DESCRIPCION </p>
-
-    </p>
-
     <br>
-
-
-
     <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Ciudad</p>
       <select id="filtro_1" name="filtro_1"  onchange="selectPlot()">
@@ -153,24 +141,85 @@
     <br>
     <hr>
     <br>
+    <br>
+
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Flitro 3</p>
+      <select id="filtro_3" name="filtro_3"  onchange="selectPlotComparate()">
+
+        
+            <option value="A">A</option>
+        
+            <option value="B">B</option>
+        
+            <option value="C">C</option>  
+                    
+            <option value="N.A">N.A</option>
+        
+            <option value="Otra">Otra</option>
+
+      </select>
+
+      <br>
+      <hr>
+      <p class="auxtext" align="center"> Seleccione la filtro 3 </p>
+    </nav>
+
+     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Filtro 4</p>
+      <select id="filtro_4" name="filtro_4"  onchange="selectPlotComparate()">
+
+            <option value="a">a</option>
+        
+            <option value="b">b</option>
+        
+            <option value="c">c</option>
+
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Seleccione Filtro 4 </p>
+    </nav>
+
+    
+
+    <div align="center">
+
+      <div class="myImagecomparate" id="A_a_1" style="display:none"> <img src="Graficas/A_a_1.jpg" alt="Bogota_Barras"> </div>
+
+      <div class="myImagecomparate" id="B_b_1" style="display:none"> <img src="Graficas/B_b_1.jpg" alt="Medellin_Barras"> </div>
+
+      <div class="myImagecomparate" id="C_c_1" style="display:none"> <img src="Graficas/C_c_1.jpg" alt="Cali_Barras"> </div>
+
+    </div>
+
+    <p>
+
+        <p class="mylabelcomparate" id="A_a_1_t" style="display:none" align="center"> GRAFICA COMPARACION IMAGEN 1 </p>
+
+        <p class="mylabelcomparate" id="B_b_1_t" style="display:none" align="center">  GRAFICA COMPARACION IMAGEN 2 </p>
+
+    </p>
+
+    <br>
+    <hr>
+
+    <div width="95%" align="center">
+        <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+        <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
+    </div>
 
     <script>
       function selectPlotComparate2() {
         var filtro_5 = document.getElementById("filtro_5").value;
         var frame = document.getElementsByClassName("frame_Comp");
-        var lbl = document.getElementsByClassName("mylabelframe");
         for (var i = 0; i < frame.length; i++) {
 
           if (frame[i].name == filtro_5) {
             frame[i].style.display = "block"
           }else{
             frame[i].style.display = "none"
-          }
-
-         if (lbl[i].id == filtro_5) {
-            lbl[i].style.display = "block"
-          }else{
-            lbl[i].style.display = "none"
           }
 
         }
