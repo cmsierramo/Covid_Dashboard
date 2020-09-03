@@ -49,45 +49,45 @@
     <header align="center">
       <h2>DASHBOARD - COVID</h2>
     </header>
-    <div width="95%" align="center">
-      <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
-        <p class="seltext">Localizacion</p>
-        <select id="filtro_8" name="filtro_8"  onchange="selectPlotComparate2()">
+    
+    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Localizacion</p>
+      <select id="filtro_8" name="filtro_8"  onchange="selectPlotComparate2()">
 
-            <option value="Colombia">Colombia</option>
+          <option value="Colombia">Colombia</option>
 
-            <option value="Bogota">Bogota</option>
-        
-            <option value="Medellin">Medellin</option>
-        
-            <option value="Cali">Cali</option>
-        
-            <option value="Barranquilla">Barranquilla</option>           
-        
-            <option value="N.A">N.A</option>
+          <option value="Bogota">Bogota</option>
+      
+          <option value="Medellin">Medellin</option>
+      
+          <option value="Cali">Cali</option>
+      
+          <option value="Barranquilla">Barranquilla</option>           
+      
+          <option value="N.A">N.A</option>
 
-        </select>
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Seleccione Filtro 5 </p>
+    </nav>
+
+    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <p class="seltext">Tipo de caso</p>
+      <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate2()">
+
+            <option value="Acumulados">Acumulados</option>
         
-        <br>
-        <hr>
-        <p class="auxtext"> Seleccione Filtro 5 </p>
-      </nav>
+            <option value="Reportados">Reportados</option>
 
-      <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
-        <p class="seltext">Tipo de caso</p>
-        <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate2()">
-
-              <option value="Acumulados">Acumulados</option>
-          
-              <option value="Reportados">Reportados</option>
-
-        </select>
-        
-        <br>
-        <hr>
-        <p class="auxtext"> Seleccione Filtro 5 </p>
-      </nav>
-    </div>
+      </select>
+      
+      <br>
+      <hr>
+      <p class="auxtext"> Seleccione Filtro 5 </p>
+    </nav>
+    
     <br>
     <div width="95%" align="center">
         <b><div class="myImage1" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco" width="95%" height="220px"> </div>
@@ -290,13 +290,13 @@
         document.getElementById("FondoBlanco").style.display = "none"
         for (var i = 0; i < frame.length; i++) {
 
-          if (frame[i].name == filtro_8.concat(carac, filtro_8)) {
+          if (frame[i].name == filtro_8.concat(carac, filtro_5)) {
             frame[i].style.display = "block"
           }else{
             frame[i].style.display = "none"
           }
 
-         if (lbl[i].id == filtro_8.concat(carac, filtro_8, carac2)) {
+         if (lbl[i].id == filtro_8.concat(carac, filtro_5, carac2)) {
             lbl[i].style.display = "block"
           }else{
             lbl[i].style.display = "none"
