@@ -16,7 +16,7 @@
         }
 
         nav {
-          float: left;
+          float: center;
           width: 45%;
           height: 100px;
           background: #eeeeee;
@@ -25,7 +25,7 @@
 
         .comparaciones {
           float: left;
-          width: 45%;
+          width: 30%;
           height: 100px;
           background: #eeeeee;
           padding: 20px;
@@ -50,7 +50,7 @@
       <h2>DASHBOARD - COVID</h2>
     </header>
     <div width="95%" align="center">
-      <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+      <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
         <p class="seltext">Filtro 5</p>
         <select id="filtro_5" name="filtro_5"  onchange="selectPlotComparate2()">
 
@@ -73,7 +73,7 @@
     </div>
     <br>
     <div width="95%" align="center">
-        <b><div class="myImage1" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco" width="95%"> </div>
+        <b><div class="myImage1" id="FondoBlanco" style="display:block"> <img src="Graficas/FondoBlanco.png" alt="FondoBlanco" width="95%" height="220px"> </div>
         <b><iframe class="frame_Comp" name="nf_1" src="Test.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
         <b><iframe class="frame_Comp" name="nf_2" src="casos_acumulados_bog.html" title="PRUEBA" width="95%" height="500px" style="display:none;"></iframe>
     </div>
@@ -90,7 +90,7 @@
 
 
 
-    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Localizacion</p>
       <select id="filtro_1" name="filtro_1"  onchange="selectPlotComparate()">
 
@@ -114,7 +114,7 @@
       <p class="auxtext" align="center"> Seleccione la ciudad </p>
     </nav>
 
-     <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+     <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Tipo de caso</p>
       <select id="filtro_2" name="filtro_2"  onchange="selectPlotComparate()">
 
@@ -135,7 +135,7 @@
       <p class="auxtext"> Comportamiento COVID 2020 - 2 </p>
     </nav>
 
-    <nav style="border:1px solid #BEBDBD; border-width:2px;" align="center">
+    <nav class="comparaciones" style="border:1px solid #BEBDBD; border-width:2px;" align="center">
       <p class="seltext">Plazo</p>
       <select id="filtro_3" name="filtro_3"  onchange="selectPlotComparate()">
 
